@@ -41,17 +41,21 @@ ELASTICSEARCH_URL=http://elasticsearch:9200
 
 | Variable          | Description                                                                                                                                      |
 | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| kibana            | <br>                                                                                                                                             |
 | ELASTIC_VERSION   | Sync stack versions                                                                                                                              |
 | ES_JAVA_OPTS      | [JVM Tuning](https://github.com/deviantony/docker-elk#jvm-tuning)                                                                                |
 | <br>              | <br>                                                                                                                                             |
+| elasticsearch     | <br>                                                                                                                                             |
 | CLUSTER_NAME      | [Cluster Description](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster.name.html)                                         |
 | NETWORK_HOST      | [To communicate and form a cluster with nodes on the servers](https://www.elastic.co/guide/en/elasticsearch/reference/current/network.host.html) |
 | NETWORK_HOST      | [To prevent data loss](https://www.elastic.co/guide/en/elasticsearch/reference/6.3/discovery-settings.html#minimum_master_nodes)                 |
 | DISCOVERY_TYPE    | [For testing usage of transport client](https://www.elastic.co/guide/en/elasticsearch/reference/6.3/bootstrap-checks.html#single-node-discovery) |
 | <br>              | <br>                                                                                                                                             |
+| logstash          | <br>                                                                                                                                             |
 | HTTP_HOST         | [To set the http.bind_host and the http.publish_host](https://www.elastic.co/guide/en/elasticsearch/reference/6.3/modules-http.html)             |
 | PATH_CONFIG       | [Location of pipline configs](https://www.elastic.co/blog/logstash-multiple-pipelines)                                                           |
 | <br>              | <br>                                                                                                                                             |
+| kibana            | <br>                                                                                                                                             |
 | SERVER_NAME       | [A human-readable display name that identifies this Kibana instance](https://www.elastic.co/guide/en/kibana/current/settings.html)               |
 | SERVER_HOST       | [This setting specifies the host of the back end server](https://www.elastic.co/guide/en/kibana/current/settings.html)                           |
 | ELASTICSEARCH_URL | [The URL of the Elasticsearch instance to use for all your queries](https://www.elastic.co/guide/en/kibana/current/settings.html)                |
