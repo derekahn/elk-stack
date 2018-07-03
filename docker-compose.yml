@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:${ELASTIC_VERSION}
+    container_name: elk_elasticsearch
+    volumes:
+      - ./elasticsearch/data/:/usr/share/elasticsearch/data
+    environment:
+      ES_JAVA_OPTS: ${ES_JAVA_OPTS}
+      cluster.name: ${CLUSTER_NAME}
+      network.host: ${NETWORK_HOST}
+      discovery.zen.minimum_master_nodes: ${DISCOVERY_ZEN_MINIMUM_MASTER_NODES}
+      discovery.type: ${DISCOVERY_TYPE}
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - elk
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash-oss:${ELASTIC_VERSION}
+    container_name: elk_logstash
+    volumes:
+      - ./logstash/pipeline/:/usr/share/logstash/pipeline:ro
+    ports:
+      - 5000:5000
+    environment:
+      ES_JAVA_OPTS: ${ES_JAVA_OPTS}
+      http.host: ${HTTP_HOST}
+      path.config: ${PATH_CONFIG}
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:${ELASTIC_VERSION}
+    container_name: elk_kibana
+    environment:
+      server.name: ${SERVER_NAME}
+      server.host: ${SERVER_HOST}
+      elasticsearch.url: ${ELASTICSEARCH_URL}
+    ports:
+      - 5601:5601
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+networks:
+
+  elk:
+    driver: bridge
