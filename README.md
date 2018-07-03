@@ -1,4 +1,4 @@
-# ELK Stack
+# 🦌 ELK Stack
 
 A simple [ELK](https://www.elastic.co/elk-stack) setup with docker-compose inspired by [deviantony](https://github.com/deviantony/docker-elk).
 
@@ -12,7 +12,7 @@ Utilizing the official Docker images from Elastic, with exposed ports:
 * [kibana](https://github.com/elastic/kibana-docker)
   * 5601: Kibana
 
-## Setup
+## 🔧 Setup
 
 #### FIRST setup .env file in root
 
@@ -60,7 +60,7 @@ ELASTICSEARCH_URL=http://elasticsearch:9200
 | SERVER_HOST       | [This setting specifies the host of the back end server](https://www.elastic.co/guide/en/kibana/current/settings.html)                           |
 | ELASTICSEARCH_URL | [The URL of the Elasticsearch instance to use for all your queries](https://www.elastic.co/guide/en/kibana/current/settings.html)                |
 
-## Usage
+## 🏃 Usage
 
 ```console
 # Create and configure
